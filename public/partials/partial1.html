@@ -1,0 +1,40 @@
+<div>
+    <h2>NBA Players</h2>
+    <table >
+    	<thead>
+    		<th>first name</th>
+    		<th>last name</th>
+    		<th>team</th>
+    		<th>delete</th>
+    	</thead>
+    	<tbody ng-repeat="player in players">
+    		<td>{{ player.first_name }}</td>
+    		<td>{{ player.last_name }}</td>
+    		<td>{{player.team.name}}</td>
+    		<td><button ng-click="destroyPlayer(player.id)">Delete</button></td>
+    	</tbody>
+    </table>
+</div>
+
+<div>
+	<h2>add a new Player.</h2>
+  </div>
+ 	<ul ng-repeat="error in errors">
+ 		<li>{{error}}</li>
+ 	</ul>
+	<form>
+		<label>Player First Name:</label>
+		<input ng-model="newPlayer.first_name " type="text">
+		<br>
+		<label>Player Last Name:</label>
+		<input ng-model="newPlayer.last_name " type="text">
+		<br>
+		<label>Select a team:</label>
+		<select ng-model="newPlayer.team_id">
+			<option ng-repeat="team in teams" ng-value="team.id">{{team.name}}</option>
+		</select>
+		<br>
+		<br>
+		<button ng-click="createPlayer(newPlayer)" type="submit" >Creat Player</button>
+	</form>
+</div>

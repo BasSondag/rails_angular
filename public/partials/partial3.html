@@ -1,0 +1,22 @@
+<div>
+	<h1>NBA Rosters</h1>
+	<form>
+		<label>Select a Team</label>
+		<br>
+		<select ng-model="findTeam.id">
+			<option ng-repeat="team in teams" ng-value="{{team.id}}">{{team.name}}</option>
+			
+		</select>
+		<br>
+		<br>
+		<button ng-click="showTeam(findTeam)">Show team</button>
+	</form>
+	<table>
+	<thead>
+		<th>Players</th>
+	</thead>
+		<tbody>
+	<td ng-repeat="player in roster">{{player.first_name}}</td>
+		</tbody>
+	</table>
+</div>
