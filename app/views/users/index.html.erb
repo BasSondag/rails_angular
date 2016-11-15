@@ -1,0 +1,43 @@
+<div>
+	<h1>Create a Account</h1>
+	<form action="/users" method="post">
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		<label>User Name:</label>
+		<br>
+		<input type="text" name="user[name]">
+		<br>
+		<label>Email:</label>
+		<br>
+		<input type="text" name="user[email]">
+		<br>
+		<label>Password:</label>
+		<br>
+		<input type="password" name="user[password]">
+		<br>
+		<label>Confirm Passwoord</label>
+		<br>
+		<input type="password" name="user[password_confirmation]">
+		<br>
+		<br>
+		<button type="submit">Create Account </button>
+
+	</form>
+</div>
+<div>
+	<h1>Login</h1>
+	<form action="/sessions" method="post">
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		<label>Email:</label>
+		<br>
+		<input type="text" name="email">
+		<br>
+		<label>Password:</label>
+		<br>
+		<input type="password" name="password">
+		<br>
+		<br>
+		<button type="submit">Create Account </button>
+
+	</form>
+
+</div>

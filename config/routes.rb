@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
-  root 'static_pages#index'
+ 
+
+  root 'users#index'
+  #session
+  post 'sessions' => "sessions#create"
+  #users
+  post 'users' => "users#create"
+  # get static page
+  get "nba" => 'static_pages#index'
   # Players
   get "players" => "players#index"
   post "players" => "players#create"
