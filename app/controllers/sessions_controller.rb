@@ -6,7 +6,13 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to "/nba"
 	  else
+      flash[:errors] = ['Invalid password or email']
       redirect_to :back
 	  end
+  end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to "/"
   end
 end

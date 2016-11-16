@@ -1,4 +1,14 @@
 <div>
+	<% if flash[:errors] %>
+			<h3><ul>
+		  <% flash[:errors].each do |error| %>
+		    	<li><%= error %></li>
+		  <% end %>
+			</ul></h3>
+		<% end %>
+</div>
+
+<div>
 	<h1>Create a Account</h1>
 	<form action="/users" method="post">
 		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">

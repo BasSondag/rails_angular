@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'users#index'
   #session
   post 'sessions' => "sessions#create"
+  delete 'sessions/:id' => "sessions#destroy"
   #users
   post 'users' => "users#create"
   # get static page

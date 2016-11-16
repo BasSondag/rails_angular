@@ -9,6 +9,7 @@ class UsersController < ApplicationController
    session[:user_id] = user.id
    redirect_to "/nba"
   else
+    flash[:errors] = user.errors.full_messages
    redirect_to :back
   end
  end

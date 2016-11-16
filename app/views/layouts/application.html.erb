@@ -10,6 +10,11 @@
     <%= csrf_meta_tags %>
 </head>
 <body>
+	<h4>
+     <% if current_user %>
+        <a href= "/sessions/<%= current_user.id %>" data-method='delete'>Log Out</a> 
+      <% end %>
+    </h4>
 <%= yield %>
 </body>
 </html>
